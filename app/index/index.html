@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+hi
+<div id="desiredDiv">
+</div>
+<script>
+function tick(){
+	$.get("hi", function(data, status){
+	  refresh(data)
+	})
+}
+function refresh(num){
+	imagenum = parseInt(num)
+	var images = [
+		'/tmp/test1/app/images/test0.jpg'
+	];
+	$('#desiredDiv').empty();
+	for(var i=0; i<imagenum; i++) {
+		$('#desiredDiv').append('<img src="images/test'+i+'.jpg" alt="" />');
+	}
+}
+
+setInterval(tick,1000)
+</script>
+</body>
+</html>

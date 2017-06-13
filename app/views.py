@@ -18,4 +18,4 @@ def hi():
   
 @app.route('/images/<path:path>')
 def images(path):
-  return send_from_directory('/tmp/test1/app/images', path)
+  return send_from_directory('images', path)

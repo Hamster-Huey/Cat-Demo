@@ -9,7 +9,8 @@ def index():
   
 @app.route('/hi')
 def hi():
-  try: lst = os.listdir('/tmp/test1/')
+  try: 
+    lst = os.listdir('/tmp/test1/')
   except OSError as err:
     return str(err)
   else:

@@ -1,6 +1,6 @@
 from app import app
 import os
-from flask import send_from_directory
+from flask import send_from_directory, jsonify
 
 @app.route('/')
 @app.route('/index')
@@ -13,9 +13,9 @@ def hi():
   except OSError as err:
     return str(err)
   else:
-    return str(len(lst))
+    return jsonify(result=lst)
   return '0'
   
 @app.route('/images/<path:path>')
 def images(path):
-  return send_from_directory('/tmp/test1/app/images', path)
+  return send_from_directory('/tmp/test1/', path)

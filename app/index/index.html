@@ -14,15 +14,16 @@ Here Are Some Cats
 <script>
 function tick(){
 	$.get("hi", function(data, status){
-	  refresh(data)
+	  refresh(data.result)
 	})
 }
-function refresh(num){
-	imagenum = parseInt(num)
+function refresh(images){
+	imagenum = parseInt(images)
 
 	$('#desiredDiv').empty();
-	for(var i=0; i<imagenum; i++) {
-		$('#desiredDiv').append('<img src="images/test'+i+'.jpg" alt="" />');
+	var arrayLength = images.length;
+	for(var i=0; i<arrayLength; i++) {
+		$('#desiredDiv').append('<img src="images/'+images[i]+'" alt="" />');
 	}
 }
 
